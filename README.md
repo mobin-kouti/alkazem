@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دوره تابستانه شهید نصرالله</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom, #f2efe6, #d4cfc3);
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+    header {
+      background-color: #4b3f2f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    nav {
+      text-align: center;
+      margin: 1rem;
+    }
+    nav button {
+      background-color: #4b3f2f;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    section {
+      margin: 2rem;
+      animation: slideUp 1.5s ease-in-out;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    th {
+      background-color: #4b3f2f;
+      color: white;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;} to {opacity: 1;}
+    }
+    @keyframes slideUp {
+      from {transform: translateY(30px); opacity: 0;} to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>دوره تابستانه شهید نصرالله</h1>
+  </header>  <nav>
+    <button onclick="switchLang('fa')">فارسی</button>
+    <button onclick="switchLang('ar')">العربیة</button>
+  </nav>  <section id="report">
+    <h2>گزارش دوره</h2>
+    <p>این بخش شامل خلاصه‌ای از فعالیت‌های انجام شده در دوره تابستانه شهید نصرالله است...</p>
+  </section>  <section id="scores">
+    <h2>لیست امتیازات</h2>
+    <table>
+      <tr>
+        <th>نام و نام خانوادگی</th>
+        <th>امتیاز</th>
+        <th>میزان حضور</th>
+      </tr>
+      <tr>
+        <td>علی رضایی</td>
+        <td>95</td>
+        <td>کامل</td>
+      </tr>
+      <tr>
+        <td>زهرا موسوی</td>
+        <td>88</td>
+        <td>80%</td>
+      </tr>
+    </table>
+  </section>  <script>
+    const content = {
+      fa: {
+        title: 'دوره تابستانه شهید نصرالله',
+        report: 'این بخش شامل خلاصه‌ای از فعالیت‌های انجام شده در دوره تابستانه شهید نصرالله است...',
+        scores: 'لیست امتیازات'
+      },
+      ar: {
+        title: 'الدورة الصيفیة الشهید نصرالله',
+        report: 'هذا القسم یحتوی علی ملخص النشاطات التی أُجریت خلال الدورة الصيفیة الشهید نصرالله...',
+        scores: 'قائمة النقاط'
+      }
+    };
+
+    function switchLang(lang) {
+      document.querySelector('header h1').innerText = content[lang].title;
+      document.querySelector('#report h2').innerText = lang === 'fa' ? 'گزارش دوره' : 'تقرير الدورة';
+      document.querySelector('#report p').innerText = content[lang].report;
+      document.querySelector('#scores h2').innerText = content[lang].scores;
+    }
+  </script></body>
+</html>
